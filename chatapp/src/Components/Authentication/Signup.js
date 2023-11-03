@@ -139,7 +139,7 @@ const Signup = () => {
 
       setLoading(false);
 
-      history.push("/chats");
+      history.push("/");
       } 
       // else {
       //   toast({
@@ -155,7 +155,7 @@ const Signup = () => {
       console.log('err', error);
       toast({
         title: "Error Occurred!",
-        description: error.response.data.message, // Display the error message from the server
+        description: error.response.message, // Display the error message from the server
         status: "error",
         duration: 5000,
         isClosable: true,
