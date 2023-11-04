@@ -48,8 +48,10 @@ const Login = () => {
         "/api/user/login",
         { email, password },
         config
-      );
-
+        );
+        localStorage.setItem("userInfo", JSON.stringify(response));
+        
+        setLoading(false);
       toast({
         title: "Login Successful",
         status: "success",
@@ -58,16 +60,14 @@ const Login = () => {
         position: "bottom",
       });
 
-      localStorage.setItem("userInfo", JSON.stringify(response));
-
-      setLoading(false);
-
+      
       history.push("/chats");
+
     }catch(error){
-      console.log("err", error);
+      // console.log("err", error);
       toast({
         title: "Error Occurred!",
-        description: error.response.data.message, // Display the error message from the server
+        description: error.response.message, // Display the error message from the server
         status: "error",
         duration: 5000,
         isClosable: true,

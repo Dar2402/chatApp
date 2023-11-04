@@ -12,6 +12,7 @@ import io from "socket.io-client";
 import Lottie from "react-lottie";
 import animationData from '../animations/typing.json'
 
+// const ENDPOINT = "http://localhost:5000"; 
 const ENDPOINT = "https://connexa.onrender.com";
 var socket, selectedChatCompare;
 
@@ -113,7 +114,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       try {
         const config = {
           headers: {
-            "Content-Type": "application/json",
+            "Content-type": "application/json",
             Authorization: `Bearer ${user.data.token}`
           },
         };
